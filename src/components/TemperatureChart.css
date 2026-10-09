@@ -1,0 +1,207 @@
+.temperature-chart-container {
+  background: var(--bg-panel);
+  border: 1px solid var(--bg-panel-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.75rem 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color var(--transition-fast);
+}
+
+.chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chart-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chart-title {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.chart-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.chart-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--accent-cyan);
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-marker {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 6px var(--accent-cyan);
+}
+
+.chart-svg-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: rgba(7, 11, 20, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.temperature-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.chart-plot-bg {
+  fill: transparent;
+}
+
+/* Grid & Axes */
+.grid-line {
+  stroke: rgba(148, 163, 184, 0.12);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.grid-baseline {
+  stroke: rgba(203, 213, 225, 0.45);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.grid-label {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.baseline-label {
+  fill: var(--text-secondary);
+  font-weight: 600;
+}
+
+.baseline-legend-text {
+  fill: var(--text-secondary);
+  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.x-grid-line {
+  stroke: rgba(148, 163, 184, 0.08);
+  stroke-width: 1;
+}
+
+.x-label {
+  fill: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* Data Elements */
+.chart-area {
+  pointer-events: none;
+}
+
+.chart-line {
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(232, 93, 78, 0.25));
+}
+
+.chart-data-dot {
+  fill: #cbd5e1;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Playback Cursor */
+.playback-cursor-line {
+  stroke: var(--accent-cyan);
+  stroke-width: 2;
+  stroke-dasharray: 4 2;
+  pointer-events: none;
+}
+
+.playback-cursor-dot {
+  fill: var(--accent-cyan);
+  pointer-events: none;
+}
+
+.playback-cursor-dot-inner {
+  fill: #040810;
+  pointer-events: none;
+}
+
+.cursor-svg-badge {
+  pointer-events: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+}
+
+.cursor-badge-bg {
+  fill: rgba(7, 11, 20, 0.92);
+  stroke: var(--accent-cyan);
+  stroke-width: 1;
+}
+
+.cursor-badge-text {
+  fill: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.chart-footer-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.chart-footer-caption strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .temperature-chart-container {
+    padding: 1.25rem 1rem 1rem;
+  }
+  .x-label {
+    font-size: 10px;
+  }
+  .grid-label {
+    font-size: 10px;
+  }
+}

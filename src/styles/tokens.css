@@ -1,0 +1,49 @@
+:root {
+  /* Color Palette - NASA Observatory Console Theme */
+  --bg-space-dark: #070b14;
+  --bg-space-navy: #0b1324;
+  --bg-gradient: linear-gradient(180deg, #070b14 0%, #0b1324 100%);
+  --bg-panel: rgba(13, 22, 41, 0.82);
+  --bg-panel-solid: #0d1629;
+  --bg-panel-border: rgba(148, 163, 184, 0.18);
+  --bg-card: rgba(18, 30, 56, 0.65);
+  --bg-card-hover: rgba(28, 45, 80, 0.75);
+
+  /* Accents */
+  --accent-cyan: #22d3ee;
+  --accent-cyan-hover: #38bdf8;
+  --accent-cyan-glow: rgba(34, 211, 238, 0.25);
+  --accent-cyan-subtle: rgba(34, 211, 238, 0.12);
+  --accent-amber: #f59e0b;
+  --accent-amber-subtle: rgba(245, 158, 11, 0.15);
+
+  /* Climate Data Indicators */
+  --data-cool: #4a90d9;
+  --data-neutral: #cbd5e1;
+  --data-warm: #e85d4e;
+  --data-extreme: #dc2626;
+
+  /* Typography Colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-contrast: #ffffff;
+
+  /* Fonts */
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* UI Spacing & Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-smooth: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container */
+  --container-max-width: 1120px;
+}

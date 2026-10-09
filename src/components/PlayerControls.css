@@ -1,0 +1,301 @@
+.player-controls-container {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-panel-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.audio-unsupported-banner {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Timeline Scrubber Section */
+.timeline-scrubber-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.scrubber-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.scrubber-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.775rem;
+}
+
+.scrubber-current-year {
+  color: var(--text-secondary);
+}
+
+.scrubber-current-year strong {
+  color: var(--accent-cyan);
+  font-size: 1rem;
+}
+
+.range-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom Range Input */
+.styled-range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+/* Slider Thumb - WebKit */
+.styled-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+  cursor: grab;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.styled-range-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 16px var(--accent-cyan);
+}
+
+.styled-range-input::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+/* Slider Thumb - Firefox */
+.styled-range-input::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+  cursor: grab;
+  transition: transform var(--transition-fast);
+}
+
+.styled-range-input::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Milestone Quick Jump Buttons */
+.timeline-milestones {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
+}
+
+.milestones-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.25rem;
+}
+
+.milestone-chip {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--bg-panel-border);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.milestone-chip:hover {
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.milestone-chip.active {
+  background: var(--accent-cyan-subtle);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+/* Controls Action Bar */
+.controls-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  padding-top: 1.25rem;
+}
+
+/* Play / Pause / Stop Buttons */
+.playback-button-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.control-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.play-btn {
+  background: var(--accent-cyan);
+  color: #040810;
+  box-shadow: 0 4px 14px var(--accent-cyan-glow);
+}
+
+.play-btn:hover:not(:disabled) {
+  background: var(--accent-cyan-hover);
+  transform: translateY(-1px);
+}
+
+.play-btn.active {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.pause-btn,
+.stop-btn {
+  background: rgba(18, 30, 56, 0.8);
+  border-color: var(--bg-panel-border);
+  color: var(--text-primary);
+}
+
+.pause-btn:hover:not(:disabled),
+.stop-btn:hover:not(:disabled) {
+  background: rgba(30, 48, 88, 0.9);
+  border-color: var(--text-secondary);
+}
+
+.btn-icon {
+  font-size: 0.9rem;
+}
+
+/* Volume Control Group */
+.volume-control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 240px;
+}
+
+.volume-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.volume-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.volume-slider {
+  height: 6px;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.volume-readout-percent {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  min-width: 38px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .controls-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+  .playback-button-group {
+    justify-content: center;
+    width: 100%;
+  }
+  .volume-control-group {
+    justify-content: space-between;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-controls-container {
+    padding: 1.25rem 1rem;
+  }
+  .playback-button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.4rem;
+  }
+  .control-btn {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.825rem;
+  }
+}

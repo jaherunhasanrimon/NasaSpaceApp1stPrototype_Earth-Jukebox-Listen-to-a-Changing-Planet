@@ -1,0 +1,73 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 11, 20, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bg-panel-border);
+  padding: 0.85rem 0;
+  transition: border-color var(--transition-fast);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.logo-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+  display: inline-block;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.challenge-tag {
+  color: var(--accent-cyan);
+  background: var(--accent-cyan-subtle);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dataset-tag {
+  color: var(--text-secondary);
+  border: 1px solid var(--bg-panel-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .dataset-tag {
+    display: none;
+  }
+  .header-meta {
+    font-size: 0.75rem;
+  }
+}
